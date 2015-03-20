@@ -16,8 +16,11 @@
     <div class="main" ng-controller="ScoreController">
       <div class="container">
         
-        <div class="row" ng-repeat="score in scores">
-          <game info="score"></game> <!-- to access each index of the score array -->
+        <div class="row">
+          <game ng-repeat="score in scores" info="score"></game> 
+          <!-- ng-repeat is inside game directive instead of div so that one single "row" div used for 3
+          scoreboards, instead of one "row" for each scoreboard, because ng-repeat repeats the element. This 
+          way the scoreboards can stack alongside to give 3 per row. -->
         </div>
       
       </div>
